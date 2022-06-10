@@ -20,7 +20,7 @@ class FilmScreen extends StatefulWidget {
 
 class _FilmScreenState extends State<FilmScreen> {
   List<Film> _films = [];
-  List<Film> likedFilms = [];
+  List<Film> _favoriteFilms = [];
   final FilmApi _filmsApi = FilmApi();
   final FavoriteStorage _favoriteStorage = FavoriteStorage();
 
@@ -51,8 +51,8 @@ class _FilmScreenState extends State<FilmScreen> {
 
   _loadAndUpdateFavorites() {
     _favoriteStorage.loadFavorites().then((List<Film> value) {
-      likedFilms = value;
-      for (var film in likedFilms) {
+      _favoriteFilms = value;
+      for (var film in _favoriteFilms) {
         for (var element in FilmScreen.refFilms) {
           if (element.film.id == film.id) {
             element.isFavorite = true;

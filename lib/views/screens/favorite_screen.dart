@@ -107,20 +107,20 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                 style: GoogleFonts.roboto(
                     fontSize: 20, fontWeight: FontWeight.bold)),
             actions: [
-              Row(children: [
-                IconButton(
-                    splashColor:
-                        Theme.of(context).brightness == Brightness.light
-                            ? Colors.deepPurple.shade200
-                            : Colors.white38,
-                    splashRadius: 23,
-                    iconSize: 25,
-                    icon: const FaIcon(FontAwesomeIcons.solidTrashCan,
-                        color: Colors.white),
-                    onPressed: () {
-                      deleteAlertDialog(context);
-                    })
-              ])
+              _favoriteFilms.isNotEmpty
+                  ? IconButton(
+                      splashColor:
+                          Theme.of(context).brightness == Brightness.light
+                              ? Colors.deepPurple.shade200
+                              : Colors.white38,
+                      splashRadius: 23,
+                      iconSize: 25,
+                      icon: const FaIcon(FontAwesomeIcons.solidTrashCan,
+                          color: Colors.white),
+                      onPressed: () {
+                        deleteAlertDialog(context);
+                      })
+                  : const Text('')
             ]),
         body: ListView.builder(
             itemCount: _favoriteFilms.length,

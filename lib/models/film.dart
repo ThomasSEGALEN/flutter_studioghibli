@@ -13,19 +13,19 @@ class Film {
   final String score;
 
   const Film(
-      this.id,
-      this.title,
-      this.originalTitle,
-      this.originalTitleRomanised,
-      this.image,
-      this.movieBanner,
-      this.description,
-      this.director,
-      this.producer,
-      this.releaseDate,
-      this.runningTime,
-      this.score,
-      );
+    this.id,
+    this.title,
+    this.originalTitle,
+    this.originalTitleRomanised,
+    this.image,
+    this.movieBanner,
+    this.description,
+    this.director,
+    this.producer,
+    this.releaseDate,
+    this.runningTime,
+    this.score,
+  );
 
   Map<String, dynamic> toJson() {
     return {

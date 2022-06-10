@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -47,48 +48,86 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
     }
   }
 
+  deleteAlertDialog(BuildContext context) {
+    return showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+              elevation: 2,
+              title: const Text('Delete favorites'),
+              content: const Text(
+                  'Do you really want to delete your favorite list?'),
+              actions: [
+                IconButton(
+                    splashColor:
+                        Theme.of(context).brightness == Brightness.light
+                            ? Colors.deepPurple.shade200
+                            : Colors.white38,
+                    splashRadius: 23,
+                    iconSize: 25,
+                    icon: const FaIcon(FontAwesomeIcons.xmark),
+                    onPressed: () {
+                      Navigator.pop(context);
+                    }),
+                IconButton(
+                    splashColor:
+                        Theme.of(context).brightness == Brightness.light
+                            ? Colors.deepPurple.shade200
+                            : Colors.white38,
+                    splashRadius: 23,
+                    iconSize: 25,
+                    icon: const FaIcon(FontAwesomeIcons.check),
+                    onPressed: () {
+                      Navigator.pop(context);
+                      setState(() {
+                        _updateAllFavoriteState(_favoriteFilms);
+                        _favoriteFilms.clear();
+                      });
+                    })
+              ]);
+        },
+        barrierDismissible: true);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          leading: IconButton(
-              splashColor: Theme.of(context).brightness == Brightness.light
-                  ? Colors.deepPurple.shade200
-                  : Colors.white38,
-              splashRadius: 23,
-              iconSize: 25,
-              icon: const FaIcon(FontAwesomeIcons.angleLeft),
-              onPressed: () {
-                Navigator.pop(context);
-              }),
-          title: Text('Favorites',
-              style: GoogleFonts.roboto(
-                  fontSize: 20, fontWeight: FontWeight.bold)),
-          actions: [
-            Row(children: [
-              IconButton(
-                  splashColor: Theme.of(context).brightness == Brightness.light
-                      ? Colors.deepPurple.shade200
-                      : Colors.white38,
-                  splashRadius: 23,
-                  iconSize: 25,
-                  icon: const FaIcon(FontAwesomeIcons.solidTrashCan,
-                      color: Colors.white),
-                  onPressed: () {
-                    setState(() {
-                      _updateAllFavoriteState(_favoriteFilms);
-                      _favoriteFilms.clear();
-                    });
-                  })
-            ])
-          ],
-        ),
+            leading: IconButton(
+                splashColor: Theme.of(context).brightness == Brightness.light
+                    ? Colors.deepPurple.shade200
+                    : Colors.white38,
+                splashRadius: 23,
+                iconSize: 25,
+                icon: const FaIcon(FontAwesomeIcons.angleLeft),
+                onPressed: () {
+                  Navigator.pop(context);
+                }),
+            title: Text('Favorites',
+                style: GoogleFonts.roboto(
+                    fontSize: 20, fontWeight: FontWeight.bold)),
+            actions: [
+              Row(children: [
+                IconButton(
+                    splashColor:
+                        Theme.of(context).brightness == Brightness.light
+                            ? Colors.deepPurple.shade200
+                            : Colors.white38,
+                    splashRadius: 23,
+                    iconSize: 25,
+                    icon: const FaIcon(FontAwesomeIcons.solidTrashCan,
+                        color: Colors.white),
+                    onPressed: () {
+                      deleteAlertDialog(context);
+                    })
+              ])
+            ]),
         body: ListView.builder(
             itemCount: _favoriteFilms.length,
             itemBuilder: (context, index) {
               return Card(
                   margin:
-                  const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                   elevation: 2,
                   child: ListTile(
                       leading: Image.network(_favoriteFilms[index].image),
@@ -98,14 +137,14 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                           style: GoogleFonts.roboto(fontSize: 14)),
                       trailing: IconButton(
                           splashColor:
-                          Theme.of(context).brightness == Brightness.light
-                              ? Colors.deepPurple.shade200
-                              : Colors.white38,
+                              Theme.of(context).brightness == Brightness.light
+                                  ? Colors.deepPurple.shade200
+                                  : Colors.white38,
                           splashRadius: 23,
                           iconSize: 25,
                           icon: FaIcon(FontAwesomeIcons.solidHeart,
                               color: Theme.of(context).brightness ==
-                                  Brightness.light
+                                      Brightness.light
                                   ? Colors.deepPurple
                                   : Colors.white,
                               semanticLabel: 'Liked',

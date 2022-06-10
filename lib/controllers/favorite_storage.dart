@@ -8,7 +8,7 @@ import '../models/ref_film.dart';
 class FavoriteStorage {
   Future<void> saveFavorites(List<RefFilm> refFilms) async {
     final SharedPreferences sharedPreferences =
-    await SharedPreferences.getInstance();
+        await SharedPreferences.getInstance();
     final List<String> listJson = [];
     for (final RefFilm refFilm in refFilms) {
       if (refFilm.isFavorite) {
@@ -20,7 +20,7 @@ class FavoriteStorage {
 
   Future<List<Film>> loadFavorites() async {
     final SharedPreferences sharedPreferences =
-    await SharedPreferences.getInstance();
+        await SharedPreferences.getInstance();
     final List<Film> films = [];
     final List<String> listJson =
         sharedPreferences.getStringList('favorite') ?? [];

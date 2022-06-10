@@ -56,7 +56,7 @@ class _DetailScreenState extends State<DetailScreen> {
                                 color: Colors.grey, height: 15, thickness: 1),
                             Container(
                                 margin:
-                                const EdgeInsets.symmetric(horizontal: 5),
+                                    const EdgeInsets.symmetric(horizontal: 5),
                                 child: Text(widget.film.description,
                                     style: GoogleFonts.roboto(fontSize: 16)))
                           ])

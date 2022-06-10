@@ -91,31 +91,31 @@ class _FilmScreenState extends State<FilmScreen> {
             actions: [
               _favoriteCount() > 0
                   ? (Row(children: [
-                Text('${_favoriteCount()}',
-                    style: GoogleFonts.roboto(
-                        fontSize: 20, fontWeight: FontWeight.bold)),
-                const SizedBox(width: 5),
-                const FaIcon(FontAwesomeIcons.solidHeart, size: 22.5),
-                IconButton(
-                    splashColor:
-                    Theme.of(context).brightness == Brightness.light
-                        ? Colors.deepPurple.shade200
-                        : Colors.white38,
-                    splashRadius: 23,
-                    iconSize: 22.5,
-                    icon: const FaIcon(FontAwesomeIcons.chevronRight,
-                        color: Colors.white),
-                    onPressed: () {
-                      if (_favoriteCount() > 0) {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                const FavoriteScreen()))
-                            .then((value) => setState(() {}));
-                      }
-                    })
-              ]))
+                      Text('${_favoriteCount()}',
+                          style: GoogleFonts.roboto(
+                              fontSize: 20, fontWeight: FontWeight.bold)),
+                      const SizedBox(width: 5),
+                      const FaIcon(FontAwesomeIcons.solidHeart, size: 22.5),
+                      IconButton(
+                          splashColor:
+                              Theme.of(context).brightness == Brightness.light
+                                  ? Colors.deepPurple.shade200
+                                  : Colors.white38,
+                          splashRadius: 23,
+                          iconSize: 22.5,
+                          icon: const FaIcon(FontAwesomeIcons.chevronRight,
+                              color: Colors.white),
+                          onPressed: () {
+                            if (_favoriteCount() > 0) {
+                              Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              const FavoriteScreen()))
+                                  .then((value) => setState(() {}));
+                            }
+                          })
+                    ]))
                   : const Text('')
             ]),
         body: ListView.builder(
@@ -123,11 +123,11 @@ class _FilmScreenState extends State<FilmScreen> {
             itemBuilder: (context, index) {
               return Card(
                   margin:
-                  const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                   elevation: 2,
                   child: ListTile(
                       leading:
-                      Image.network(FilmScreen.refFilms[index].film.image),
+                          Image.network(FilmScreen.refFilms[index].film.image),
                       title: Text(FilmScreen.refFilms[index].film.title,
                           style: GoogleFonts.roboto(fontSize: 18)),
                       subtitle: Text(
@@ -135,9 +135,9 @@ class _FilmScreenState extends State<FilmScreen> {
                           style: GoogleFonts.roboto(fontSize: 14)),
                       trailing: IconButton(
                           splashColor:
-                          Theme.of(context).brightness == Brightness.light
-                              ? Colors.deepPurple.shade200
-                              : Colors.white38,
+                              Theme.of(context).brightness == Brightness.light
+                                  ? Colors.deepPurple.shade200
+                                  : Colors.white38,
                           splashRadius: 23,
                           iconSize: 25,
                           icon: FaIcon(
@@ -145,13 +145,13 @@ class _FilmScreenState extends State<FilmScreen> {
                                   ? FontAwesomeIcons.solidHeart
                                   : FontAwesomeIcons.heart,
                               color: Theme.of(context).brightness ==
-                                  Brightness.light
+                                      Brightness.light
                                   ? Colors.deepPurple
                                   : Colors.white,
                               semanticLabel:
-                              FilmScreen.refFilms[index].isFavorite
-                                  ? 'Liked'
-                                  : 'Not Liked'),
+                                  FilmScreen.refFilms[index].isFavorite
+                                      ? 'Liked'
+                                      : 'Not Liked'),
                           onPressed: () {
                             setState(() {
                               _updateFavoriteState(

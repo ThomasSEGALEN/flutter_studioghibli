@@ -6,7 +6,7 @@
 2. [Rendu attendu](README.md#2-rendu-attendu-)
 3. [Notation](README.md#3-notation-)
 4. [Version Flutter/Dart](README.md#4-version-flutter-dart-)
-5. [Fonctionnalités de l'application](README.md#5-fonctionnalités-de-l-application-)
+5. [Fonctionnalités](README.md#5-fonctionnalités-)
 6. [API](README.md#6-api-)
 
 ## 1. Définition du projet :
@@ -43,7 +43,7 @@ Pour la notation, les éléments suivants seront pris en compte :
 Flutter **3.0.1**  
 Dart SDK **2.17.1**
 
-## 5. Fonctionnalités de l'application :
+## 5. Fonctionnalités :
 
 L'application possède 3 écrans :
 - Accueil

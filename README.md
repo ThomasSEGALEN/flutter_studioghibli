@@ -5,7 +5,7 @@
 1. [Définition du projet](README.md#1-Définition-du-projet-)
 2. [Rendu attendu](README.md#2-rendu-attendu-)
 3. [Notation](README.md#3-notation-)
-4. [Version Flutter/Dart](README.md#4-version-flutter-dart-)
+4. [Version Flutter/Dart](README.md#4-version-flutterdart-)
 5. [Fonctionnalités](README.md#5-fonctionnalités-)
 6. [API](README.md#6-api-)
 

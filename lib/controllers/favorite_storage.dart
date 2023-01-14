@@ -10,11 +10,13 @@ class FavoriteStorage {
     final SharedPreferences sharedPreferences =
         await SharedPreferences.getInstance();
     final List<String> listJson = [];
+
     for (final RefFilm refFilm in refFilms) {
       if (refFilm.isFavorite) {
         listJson.add(jsonEncode(refFilm.film.toJson()));
       }
     }
+
     sharedPreferences.setStringList('favorite', listJson);
   }
 
@@ -24,9 +26,11 @@ class FavoriteStorage {
     final List<Film> films = [];
     final List<String> listJson =
         sharedPreferences.getStringList('favorite') ?? [];
+
     for (final String json in listJson) {
       films.add(Film.fromJson(jsonDecode(json)));
     }
+
     return films;
   }
 }

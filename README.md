@@ -54,5 +54,5 @@ Sur l'écran d'Accueil, une liste de tous les films du **Studio Ghibli** appara�
 
 ## 6. API :
 
-Pour réaliser ce projet, j'ai utilisé l'API [Studio Ghibli](https://ghibliapi.herokuapp.com/).
+Pour réaliser ce projet, j'ai utilisé l'API [Studio Ghibli](https://studioghibliapi-d6fc8.web.app/).
   

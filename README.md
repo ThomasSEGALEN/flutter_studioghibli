@@ -2,7 +2,7 @@
 
 ## Sommaire
 
-1. [Définition du projet](README.md#1-Définition-du-projet-)
+1. [Définition du projet](README.md#1-définition-du-projet-)
 2. [Rendu attendu](README.md#2-rendu-attendu-)
 3. [Notation](README.md#3-notation-)
 4. [Version Flutter/Dart](README.md#4-version-flutterdart-)
